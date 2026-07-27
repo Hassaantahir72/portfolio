@@ -45,7 +45,7 @@
       "title": "E-Commerce Platform",
       "description": "A full-featured e-commerce platform with real-time inventory, payment integration, and admin dashboard. Built with React, Node.js, and MongoDB.",
       "tags": ["React", "Node.js", "MongoDB", "Stripe"],
-      "github": "https://github.com/hassaan",
+      "github": "https://github.com/Hassaantahir72",
       "live": "#",
       "image": "ecommerce",
       "featured": true
@@ -55,7 +55,7 @@
       "title": "Real-Time Chat App",
       "description": "Scalable real-time messaging platform with WebSocket support, group chats, file sharing, and end-to-end encryption.",
       "tags": ["Next.js", "Socket.io", "PostgreSQL", "Redis"],
-      "github": "https://github.com/hassaan",
+      "github": "https://github.com/Hassaantahir72",
       "live": "#",
       "image": "chat",
       "featured": true
@@ -65,7 +65,7 @@
       "title": "SaaS Analytics Dashboard",
       "description": "Multi-tenant analytics dashboard with real-time data visualization, custom reports, and API integrations.",
       "tags": ["Vue.js", "Python", "Django", "PostgreSQL"],
-      "github": "https://github.com/hassaan",
+      "github": "https://github.com/Hassaantahir72",
       "live": "#",
       "image": "analytics",
       "featured": true
@@ -75,7 +75,7 @@
       "title": "DevOps CI/CD Tool",
       "description": "Automated deployment pipeline tool with Docker orchestration, rollback support, and Slack notifications.",
       "tags": ["Node.js", "Docker", "AWS", "React"],
-      "github": "https://github.com/hassaan",
+      "github": "https://github.com/Hassaantahir72",
       "live": "#",
       "image": "devops",
       "featured": false
@@ -85,7 +85,7 @@
       "title": "AI Content Generator",
       "description": "AI-powered content generation platform with GPT integration, template management, and team collaboration.",
       "tags": ["React", "OpenAI API", "Node.js", "MongoDB"],
-      "github": "https://github.com/hassaan",
+      "github": "https://github.com/Hassaantahir72",
       "live": "#",
       "image": "ai",
       "featured": false
@@ -95,12 +95,13 @@
       "title": "Social Media API",
       "description": "RESTful + GraphQL API for a social media platform with feeds, notifications, follows, and media uploads.",
       "tags": ["GraphQL", "Node.js", "PostgreSQL", "Redis"],
-      "github": "https://github.com/hassaan",
+      "github": "https://github.com/Hassaantahir72",
       "live": "#",
       "image": "social",
       "featured": false
     }
   ],
+  "experience": [],
   "certificates": [
     {
       "id": 1,

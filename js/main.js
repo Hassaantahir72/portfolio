@@ -220,6 +220,8 @@ function renderPortfolio(data) {
   if (data.skills) renderSkills(data.skills);
   // Projects
   if (data.projects) renderProjects(data.projects);
+  // Experience
+  if (data.experience) renderExperience(data.experience);
   // Certificates
   if (data.certificates) renderCertificates(data.certificates);
 }
@@ -349,6 +351,38 @@ function filterProjects(filter) {
   setTimeout(() => {
     grid.querySelectorAll('.project-card').forEach((card, i) => {
       setTimeout(() => card.classList.add('visible'), i * 80);
+    });
+  }, 50);
+}
+
+// ===== EXPERIENCE =====
+function renderExperience(experiences) {
+  const container = document.getElementById('experienceTimeline');
+  if (!container) return;
+  if (!experiences || !experiences.length) {
+    container.innerHTML = '<p style="color:var(--text2);text-align:center;padding:2rem">No experience added yet.</p>';
+    return;
+  }
+  container.innerHTML = experiences.map((e, i) => `
+    <div class="exp-card reveal" style="transition-delay:${i*0.1}s">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">${e.role}</div>
+          <div class="exp-company"><i class="fas fa-building" style="font-size:0.8rem"></i> ${e.company}</div>
+          <div class="exp-location"><i class="fas fa-map-marker-alt" style="font-size:0.75rem"></i> ${e.location || ''}</div>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-duration"><i class="fas fa-calendar-alt"></i> ${e.duration}</div>
+          ${e.current ? '<div class="exp-current">&#11044; Currently Working</div>' : ''}
+        </div>
+      </div>
+      <p class="exp-desc">${e.description || ''}</p>
+      <div class="exp-tags">${(e.tags || []).map(t => `<span class="exp-tag">${t}</span>`).join('')}</div>
+    </div>
+  `).join('');
+  setTimeout(() => {
+    container.querySelectorAll('.exp-card').forEach((card, i) => {
+      setTimeout(() => card.classList.add('visible'), i * 100);
     });
   }, 50);
 }

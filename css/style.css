@@ -651,7 +651,26 @@ a:hover ~ .cursor, button:hover ~ .cursor { transform: translate(-50%,-50%) scal
 .thumb-ai { background: linear-gradient(135deg, #1a001a, #2d0060); }
 .thumb-social { background: linear-gradient(135deg, #0a1628, #1a3a5c); }
 
-/* ===== CERTIFICATES ===== */
+/* ===== EXPERIENCE ===== */
+.experience-section { background: var(--bg2); }
+.experience-timeline { position: relative; padding-left: 2rem; }
+.experience-timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--accent),var(--accent2),transparent); border-radius:2px; }
+.exp-card { position:relative; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.75rem; margin-bottom:1.5rem; transition:var(--transition); }
+.exp-card:hover { border-color:rgba(0,212,255,0.3); transform:translateX(6px); box-shadow:var(--glow); }
+.exp-card::before { content:''; position:absolute; left:-2.45rem; top:1.75rem; width:14px; height:14px; background:var(--accent); border:3px solid var(--bg); border-radius:50%; box-shadow:0 0 12px rgba(0,212,255,0.5); }
+.exp-header { display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem; }
+.exp-role { font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:700; margin-bottom:0.2rem; }
+.exp-company { color:var(--accent); font-weight:600; font-size:0.9rem; }
+.exp-location { color:var(--text2); font-size:0.82rem; margin-top:0.1rem; }
+.exp-meta { text-align:right; }
+.exp-duration { display:inline-flex; align-items:center; gap:0.4rem; background:rgba(0,212,255,0.08); border:1px solid rgba(0,212,255,0.2); color:var(--accent); padding:0.3rem 0.8rem; border-radius:50px; font-size:0.78rem; font-weight:600; }
+.exp-current { display:inline-block; margin-top:0.4rem; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:var(--green); padding:0.2rem 0.6rem; border-radius:50px; font-size:0.72rem; font-weight:700; }
+.exp-desc { color:var(--text2); font-size:0.9rem; line-height:1.7; margin-bottom:1rem; }
+.exp-tags { display:flex; flex-wrap:wrap; gap:0.4rem; }
+.exp-tag { background:rgba(124,58,237,0.08); border:1px solid rgba(124,58,237,0.2); color:var(--accent2); padding:0.2rem 0.6rem; border-radius:6px; font-size:0.75rem; font-weight:600; }
+@media(max-width:600px){ .exp-header{flex-direction:column;} .exp-meta{text-align:left;} .experience-timeline{padding-left:1.5rem;} }
+
+/* ===== CERTIFICATES =====
 .certs-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
