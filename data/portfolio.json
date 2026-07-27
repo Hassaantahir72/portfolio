@@ -3,160 +3,58 @@
     "name": "Hassaan",
     "title": "Full-Stack Developer",
     "subtitle": "Building Digital Experiences That Matter",
-    "typingTexts": [
-      "Full-Stack Developer",
-      "React Expert",
-      "Node.js Engineer",
-      "UI/UX Enthusiast",
-      "API Architect"
-    ]
+    "typingTexts": ["Full-Stack Developer", "React Expert", "Node.js Engineer", "UI/UX Enthusiast", "API Architect"]
   },
   "about": {
     "bio": "I'm a passionate Full-Stack Developer with expertise in building scalable, high-performance web applications. I love transforming complex problems into elegant, user-friendly solutions. With a strong foundation in both frontend and backend technologies, I bring ideas to life from concept to deployment.",
-    "experience": "1+ Years",
-    "projects": "10+",
+    "experience": "3+ Years",
+    "projects": "50+",
     "clients": "20+"
   },
   "skills": {
     "frontend": [
-      {
-        "name": "React.js",
-        "level": 95,
-        "icon": "⚛️"
-      },
-      {
-        "name": "Next.js",
-        "level": 90,
-        "icon": "▲"
-      },
-      {
-        "name": "TypeScript",
-        "level": 88,
-        "icon": "📘"
-      },
-      {
-        "name": "HTML5 / CSS3",
-        "level": 98,
-        "icon": "🎨"
-      },
-      {
-        "name": "Tailwind CSS",
-        "level": 92,
-        "icon": "🌊"
-      },
-      {
-        "name": "GSAP / Animations",
-        "level": 85,
-        "icon": "✨"
-      },
-      {
-        "name": "Redux / Zustand",
-        "level": 87,
-        "icon": "🔄"
-      },
-      {
-        "name": "Vite.js",
-        "level": 92,
-        "icon": "⚡"
-      },
-      {
-        "name": "JavaScript",
-        "level": 95,
-        "icon": "⚡"
-      }
+      { "name": "React.js", "level": 95, "icon": "⚛️" },
+      { "name": "Next.js", "level": 90, "icon": "▲" },
+      { "name": "TypeScript", "level": 88, "icon": "📘" },
+      { "name": "Vue.js", "level": 82, "icon": "💚" },
+      { "name": "HTML5 / CSS3", "level": 98, "icon": "🎨" },
+      { "name": "Tailwind CSS", "level": 92, "icon": "🌊" },
+      { "name": "GSAP / Animations", "level": 85, "icon": "✨" },
+      { "name": "Redux / Zustand", "level": 87, "icon": "🔄" }
     ],
     "backend": [
-      {
-        "name": "Node.js",
-        "level": 93,
-        "icon": "🟢"
-      },
-      {
-        "name": "Express.js",
-        "level": 91,
-        "icon": "⚡"
-      },
-      {
-        "name": "Python / Django",
-        "level": 80,
-        "icon": "🐍"
-      },
-      {
-        "name": "PostgreSQL",
-        "level": 85,
-        "icon": "🐘"
-      },
-      {
-        "name": "MongoDB",
-        "level": 88,
-        "icon": "🍃"
-      },
-      {
-        "name": "Redis",
-        "level": 78,
-        "icon": "🔴"
-      },
-      {
-        "name": "GraphQL",
-        "level": 83,
-        "icon": "◉"
-      },
-      {
-        "name": "REST APIs",
-        "level": 96,
-        "icon": "🔗"
-      }
+      { "name": "Node.js", "level": 93, "icon": "🟢" },
+      { "name": "Express.js", "level": 91, "icon": "⚡" },
+      { "name": "Python / Django", "level": 80, "icon": "🐍" },
+      { "name": "PostgreSQL", "level": 85, "icon": "🐘" },
+      { "name": "MongoDB", "level": 88, "icon": "🍃" },
+      { "name": "Redis", "level": 78, "icon": "🔴" },
+      { "name": "GraphQL", "level": 83, "icon": "◉" },
+      { "name": "REST APIs", "level": 96, "icon": "🔗" }
     ],
     "devops": [
-      {
-        "name": "Docker",
-        "level": 82,
-        "icon": "🐳"
-      },
-      {
-        "name": "AWS / Cloud",
-        "level": 78,
-        "icon": "☁️"
-      },
-      {
-        "name": "Git / GitHub",
-        "level": 95,
-        "icon": "🐙"
-      },
-      {
-        "name": "CI/CD Pipelines",
-        "level": 80,
-        "icon": "🔁"
-      }
+      { "name": "Docker", "level": 82, "icon": "🐳" },
+      { "name": "AWS / Cloud", "level": 78, "icon": "☁️" },
+      { "name": "Git / GitHub", "level": 95, "icon": "🐙" },
+      { "name": "CI/CD Pipelines", "level": 80, "icon": "🔁" }
     ]
   },
   "projects": [
     {
       "id": 1,
-      "title": "Finance Tracker Platform",
+      "title": "E-Commerce Platform",
       "description": "A full-featured e-commerce platform with real-time inventory, payment integration, and admin dashboard. Built with React, Node.js, and MongoDB.",
-      "tags": [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Express"
-      ],
-      "github": "https://github.com/Hassaantahir72/finance-tracker",
-      "live": "https://finance-tracker-web-lac.vercel.app/",
-      "image": "custom",
-      "featured": true,
-      "customImage": "/assets/projects/1785174825911.png"
+      "tags": ["React", "Node.js", "MongoDB", "Stripe"],
+      "github": "https://github.com/hassaan",
+      "live": "#",
+      "image": "ecommerce",
+      "featured": true
     },
     {
       "id": 2,
       "title": "Real-Time Chat App",
       "description": "Scalable real-time messaging platform with WebSocket support, group chats, file sharing, and end-to-end encryption.",
-      "tags": [
-        "Next.js",
-        "Socket.io",
-        "PostgreSQL",
-        "Redis"
-      ],
+      "tags": ["Next.js", "Socket.io", "PostgreSQL", "Redis"],
       "github": "https://github.com/hassaan",
       "live": "#",
       "image": "chat",
@@ -166,12 +64,7 @@
       "id": 3,
       "title": "SaaS Analytics Dashboard",
       "description": "Multi-tenant analytics dashboard with real-time data visualization, custom reports, and API integrations.",
-      "tags": [
-        "Vue.js",
-        "Python",
-        "Django",
-        "PostgreSQL"
-      ],
+      "tags": ["Vue.js", "Python", "Django", "PostgreSQL"],
       "github": "https://github.com/hassaan",
       "live": "#",
       "image": "analytics",
@@ -181,12 +74,7 @@
       "id": 4,
       "title": "DevOps CI/CD Tool",
       "description": "Automated deployment pipeline tool with Docker orchestration, rollback support, and Slack notifications.",
-      "tags": [
-        "Node.js",
-        "Docker",
-        "AWS",
-        "React"
-      ],
+      "tags": ["Node.js", "Docker", "AWS", "React"],
       "github": "https://github.com/hassaan",
       "live": "#",
       "image": "devops",
@@ -196,12 +84,7 @@
       "id": 5,
       "title": "AI Content Generator",
       "description": "AI-powered content generation platform with GPT integration, template management, and team collaboration.",
-      "tags": [
-        "React",
-        "OpenAI API",
-        "Node.js",
-        "MongoDB"
-      ],
+      "tags": ["React", "OpenAI API", "Node.js", "MongoDB"],
       "github": "https://github.com/hassaan",
       "live": "#",
       "image": "ai",
@@ -211,42 +94,31 @@
       "id": 6,
       "title": "Social Media API",
       "description": "RESTful + GraphQL API for a social media platform with feeds, notifications, follows, and media uploads.",
-      "tags": [
-        "GraphQL",
-        "Node.js",
-        "PostgreSQL",
-        "Redis"
-      ],
+      "tags": ["GraphQL", "Node.js", "PostgreSQL", "Redis"],
       "github": "https://github.com/hassaan",
       "live": "#",
       "image": "social",
       "featured": false
     }
   ],
-
-  "experience": [
-  {
-    "id": 1,
-    "role": "Full-Stack Developer",
-    "company": "Company Name",
-    "location": "Remote",
-    "duration": "Jan 2023 – Present",
-    "description": "Describe what you did here.",
-    "tags": ["React", "Node.js", "MongoDB"],
-    "current": true
-  },
-  {
-    "id": 2,
-    "role": "Frontend Developer",
-    "company": "Another Company",
-    "location": "Lahore, Pakistan",
-    "duration": "Jun 2022 – Dec 2022",
-    "description": "Describe your role here.",
-    "tags": ["HTML", "CSS", "JavaScript"],
-    "current": false
-  }
-],
-
+  "certificates": [
+    {
+      "id": 1,
+      "name": "Full-Stack Web Development",
+      "issuer": "Coursera",
+      "date": "Dec 2023",
+      "image": "",
+      "link": "https://coursera.org"
+    },
+    {
+      "id": 2,
+      "name": "React & Redux Masterclass",
+      "issuer": "Udemy",
+      "date": "Mar 2023",
+      "image": "",
+      "link": "https://udemy.com"
+    }
+  ],
   "contact": {
     "email": "hassaantahir991@gmail.com",
     "github": "https://github.com/Hassaantahir72",

@@ -220,36 +220,10 @@ function renderPortfolio(data) {
   if (data.skills) renderSkills(data.skills);
   // Projects
   if (data.projects) renderProjects(data.projects);
-  // Experience
-  if (data.experience) renderExperience(data.experience);
+  // Certificates
+  if (data.certificates) renderCertificates(data.certificates);
 }
 
-function renderExperience(experiences) {
-  const container = document.getElementById('experienceTimeline');
-  if (!container || !experiences.length) return;
-  container.innerHTML = experiences.map((e, i) => `
-    <div class="exp-card reveal" style="transition-delay:${i*0.1}s">
-      <div class="exp-header">
-        <div>
-          <div class="exp-role">${e.role}</div>
-          <div class="exp-company"><i class="fas fa-building" style="font-size:0.8rem"></i> ${e.company}</div>
-          <div class="exp-location"><i class="fas fa-map-marker-alt" style="font-size:0.75rem"></i> ${e.location||''}</div>
-        </div>
-        <div class="exp-meta">
-          <div class="exp-duration"><i class="fas fa-calendar-alt"></i> ${e.duration}</div>
-          ${e.current ? '<div class="exp-current">● Currently Working</div>' : ''}
-        </div>
-      </div>
-      <p class="exp-desc">${e.description}</p>
-      <div class="exp-tags">${(e.tags||[]).map(t=>`<span class="exp-tag">${t}</span>`).join('')}</div>
-    </div>
-  `).join('');
-  setTimeout(() => {
-    container.querySelectorAll('.exp-card').forEach((card, i) => {
-      setTimeout(() => card.classList.add('visible'), i * 100);
-    });
-  }, 50);
-}
 function renderSocials(contact) {
   const container = document.getElementById('socialLinks');
   if (!container) return;
@@ -374,6 +348,41 @@ function filterProjects(filter) {
   }).join('');
   setTimeout(() => {
     grid.querySelectorAll('.project-card').forEach((card, i) => {
+      setTimeout(() => card.classList.add('visible'), i * 80);
+    });
+  }, 50);
+}
+
+// ===== CERTIFICATES =====
+function renderCertificates(certs) {
+  const grid = document.getElementById('certsGrid');
+  if (!grid) return;
+  if (!certs || !certs.length) {
+    grid.innerHTML = '<p style="color:var(--text2);text-align:center;grid-column:1/-1;padding:2rem">No certificates added yet.</p>';
+    return;
+  }
+  grid.innerHTML = certs.map((c, i) => `
+    <a href="${c.link || '#'}" target="_blank" rel="noopener noreferrer" class="cert-card reveal" style="animation-delay:${i*0.1}s;text-decoration:none">
+      <div class="cert-img-wrap">
+        ${c.image
+          ? `<img src="${c.image}" alt="${c.name}" class="cert-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+             <div class="cert-img-fallback" style="display:none"><i class="fas fa-certificate"></i></div>`
+          : `<div class="cert-img-fallback"><i class="fas fa-certificate"></i></div>`
+        }
+        <div class="cert-view-overlay"><i class="fas fa-external-link-alt"></i><span>View Certificate</span></div>
+      </div>
+      <div class="cert-body">
+        <div class="cert-name">${c.name}</div>
+        <div class="cert-meta">
+          <span class="cert-issuer"><i class="fas fa-building"></i> ${c.issuer}</span>
+          <span class="cert-date"><i class="fas fa-calendar"></i> ${c.date}</span>
+        </div>
+        <div class="cert-link-hint"><i class="fas fa-arrow-right"></i> View Certificate</div>
+      </div>
+    </a>
+  `).join('');
+  setTimeout(() => {
+    grid.querySelectorAll('.cert-card').forEach((card, i) => {
       setTimeout(() => card.classList.add('visible'), i * 80);
     });
   }, 50);

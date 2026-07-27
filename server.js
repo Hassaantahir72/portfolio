@@ -204,6 +204,23 @@ app.post('/api/admin/upload-cv', auth, upload.single('cv'), (req, res) => {
   res.json({ success: true, message: 'CV uploaded successfully!' });
 });
 
+// Upload Certificate Image
+const certImgStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const dir = path.join(__dirname, 'assets/certificates');
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    cb(null, dir);
+  },
+  filename: (req, file, cb) => cb(null, 'cert_' + Date.now() + path.extname(file.originalname))
+});
+const certUpload = multer({ storage: certImgStorage, limits: { fileSize: 5 * 1024 * 1024 } });
+
+app.post('/api/admin/upload-cert-image', auth, certUpload.single('image'), (req, res) => {
+  if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
+  res.json({ success: true, imageUrl: `/assets/certificates/${req.file.filename}` });
+});
+app.use('/assets/certificates', express.static(path.join(__dirname, 'assets/certificates')));
+
 // Upload Project Image
 const projectImgStorage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, './assets/projects'),
