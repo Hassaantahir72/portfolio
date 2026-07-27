@@ -58,7 +58,7 @@ app.get('/api/portfolio', (req, res) => {
 app.post('/api/contact', async (req, res) => {
   const { name, email, subject, message } = req.body;
   if (!name || !email || !message) return res.status(400).json({ error: 'Missing fields' });
-  
+
   // Save message
   const messages = readData('messages.json');
   const newMsg = { id: Date.now(), name, email, subject, message, date: new Date().toISOString(), read: false };
@@ -77,10 +77,14 @@ app.post('/api/contact', async (req, res) => {
       console.log(`[Email] Sending to: ${toEmail}`);
       const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        port: 587,
+        secure: false,
+        requireTLS: true,
         auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
-        tls: { rejectUnauthorized: false }
+        tls: { rejectUnauthorized: false },
+        connectionTimeout: 10000,
+        greetingTimeout: 10000,
+        socketTimeout: 15000,
       });
       await transporter.verify();
       await transporter.sendMail({
@@ -141,7 +145,7 @@ app.post('/api/admin/login', async (req, res) => {
     if (!valid) return res.status(401).json({ error: 'Invalid credentials' });
     const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: '24h' });
     res.json({ token, username });
-  } catch(e) { console.error(e); res.status(500).json({ error: 'Login failed' }); }
+  } catch (e) { console.error(e); res.status(500).json({ error: 'Login failed' }); }
 });
 
 // Get messages
