@@ -220,8 +220,36 @@ function renderPortfolio(data) {
   if (data.skills) renderSkills(data.skills);
   // Projects
   if (data.projects) renderProjects(data.projects);
+  // Experience
+  if (data.experience) renderExperience(data.experience);
 }
 
+function renderExperience(experiences) {
+  const container = document.getElementById('experienceTimeline');
+  if (!container || !experiences.length) return;
+  container.innerHTML = experiences.map((e, i) => `
+    <div class="exp-card reveal" style="transition-delay:${i*0.1}s">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">${e.role}</div>
+          <div class="exp-company"><i class="fas fa-building" style="font-size:0.8rem"></i> ${e.company}</div>
+          <div class="exp-location"><i class="fas fa-map-marker-alt" style="font-size:0.75rem"></i> ${e.location||''}</div>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-duration"><i class="fas fa-calendar-alt"></i> ${e.duration}</div>
+          ${e.current ? '<div class="exp-current">● Currently Working</div>' : ''}
+        </div>
+      </div>
+      <p class="exp-desc">${e.description}</p>
+      <div class="exp-tags">${(e.tags||[]).map(t=>`<span class="exp-tag">${t}</span>`).join('')}</div>
+    </div>
+  `).join('');
+  setTimeout(() => {
+    container.querySelectorAll('.exp-card').forEach((card, i) => {
+      setTimeout(() => card.classList.add('visible'), i * 100);
+    });
+  }, 50);
+}
 function renderSocials(contact) {
   const container = document.getElementById('socialLinks');
   if (!container) return;

@@ -223,6 +223,30 @@
       "featured": false
     }
   ],
+
+  "experience": [
+  {
+    "id": 1,
+    "role": "Full-Stack Developer",
+    "company": "Company Name",
+    "location": "Remote",
+    "duration": "Jan 2023 – Present",
+    "description": "Describe what you did here.",
+    "tags": ["React", "Node.js", "MongoDB"],
+    "current": true
+  },
+  {
+    "id": 2,
+    "role": "Frontend Developer",
+    "company": "Another Company",
+    "location": "Lahore, Pakistan",
+    "duration": "Jun 2022 – Dec 2022",
+    "description": "Describe your role here.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "current": false
+  }
+],
+
   "contact": {
     "email": "hassaantahir991@gmail.com",
     "github": "https://github.com/Hassaantahir72",
