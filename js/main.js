@@ -396,28 +396,30 @@ function renderCertificates(certs) {
     return;
   }
   grid.innerHTML = certs.map((c, i) => `
-    <a href="${c.link || '#'}" target="_blank" rel="noopener noreferrer" class="cert-card reveal" style="animation-delay:${i*0.1}s;text-decoration:none">
+    <div class="cert-card" style="animation-delay:${i*0.1}s">
       <div class="cert-img-wrap">
         ${c.image
           ? `<img src="${c.image}" alt="${c.name}" class="cert-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
              <div class="cert-img-fallback" style="display:none"><i class="fas fa-certificate"></i></div>`
           : `<div class="cert-img-fallback"><i class="fas fa-certificate"></i></div>`
         }
-        <div class="cert-view-overlay"><i class="fas fa-external-link-alt"></i><span>View Certificate</span></div>
       </div>
       <div class="cert-body">
         <div class="cert-name">${c.name}</div>
         <div class="cert-meta">
           <span class="cert-issuer"><i class="fas fa-building"></i> ${c.issuer}</span>
-          <span class="cert-date"><i class="fas fa-calendar"></i> ${c.date}</span>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> ${c.date}</span>
         </div>
-        <div class="cert-link-hint"><i class="fas fa-arrow-right"></i> View Certificate</div>
+        ${c.link && c.link !== '#'
+          ? `<a href="${c.link}" target="_blank" rel="noopener noreferrer" class="cert-btn"><i class="fas fa-external-link-alt"></i> View Certificate</a>`
+          : `<span class="cert-btn cert-btn-disabled"><i class="fas fa-certificate"></i> Certificate</span>`
+        }
       </div>
-    </a>
+    </div>
   `).join('');
   setTimeout(() => {
     grid.querySelectorAll('.cert-card').forEach((card, i) => {
-      setTimeout(() => card.classList.add('visible'), i * 80);
+      setTimeout(() => { card.classList.add('visible'); }, i * 100);
     });
   }, 50);
 }
