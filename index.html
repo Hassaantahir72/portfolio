@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hassaan | Full-Stack Developer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">&lt;H/&gt;</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-text">Initializing...</div>
+    </div>
+  </div>
+
+  <!-- Particles Background -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">&lt;<span>H</span>/&gt;</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#" class="nav-link cv-btn" onclick="downloadCV(event)"><i class="fas fa-download"></i> Resume</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-text-side">
+        <div class="hero-badge"><span class="badge-dot"></span> Available for Work</div>
+        <h1 class="hero-title">
+          <span class="hero-greeting">Hello, I'm</span>
+          <span class="hero-name" id="heroName">Hassaan</span>
+        </h1>
+        <div class="hero-typing-wrapper">
+          <span class="typing-prefix">I'm a </span>
+          <span class="typing-text" id="typingText"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+        <p class="hero-desc">Crafting exceptional digital experiences with clean code, stunning interfaces, and robust backend architecture. Let's build something extraordinary together.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary"><span>View My Work</span><i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-secondary"><span>Get In Touch</span></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><div class="stat-number" data-target="1+">0</div><div class="stat-label">Years Exp.</div></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><div class="stat-number" data-target="10+">0</div><div class="stat-label">Projects Done</div></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><div class="stat-number" data-target="10+">0</div><div class="stat-label">Happy Clients</div></div>
+        </div>
+      </div>
+      <div class="hero-image-side">
+        <div class="hero-image-container">
+          <div class="image-glow"></div>
+          <div class="image-ring ring-1"></div>
+          <div class="image-ring ring-2"></div>
+          <div class="image-ring ring-3"></div>
+          <img src="assets/hassaan.jpg" alt="Hassaan" class="hero-photo" id="heroPhoto" />
+          <div class="floating-badge badge-react"><i class="fab fa-react"></i> React</div>
+          <div class="floating-badge badge-node"><i class="fab fa-node-js"></i> Node.js</div>
+          <div class="floating-badge badge-code"><i class="fas fa-code"></i> Full-Stack</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">About Me</div>
+        <h2 class="section-title">Who I Am</h2>
+        <p class="section-subtitle">A passionate developer who turns ideas into reality</p>
+      </div>
+      <div class="about-content">
+        <div class="about-visual">
+          <div class="about-img-wrapper">
+            <img src="assets/hassaan.jpg" alt="Hassaan" class="about-photo" />
+            <div class="about-img-overlay">
+              <div class="code-snippet">
+                <span class="code-comment">// My Philosophy</span><br/>
+                <span class="code-const">const</span> <span class="code-var">hassaan</span> = {<br/>
+                &nbsp;&nbsp;<span class="code-key">passion</span>: <span class="code-str">'coding'</span>,<br/>
+                &nbsp;&nbsp;<span class="code-key">mindset</span>: <span class="code-str">'growth'</span>,<br/>
+                &nbsp;&nbsp;<span class="code-key">coffee</span>: <span class="code-bool">true</span>,<br/>
+                };
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="about-bio" id="aboutBio">Loading...</p>
+          <div class="about-highlights">
+            <div class="highlight-item"><i class="fas fa-rocket"></i><span>Performance-First Development</span></div>
+            <div class="highlight-item"><i class="fas fa-mobile-alt"></i><span>Mobile-First Design</span></div>
+            <div class="highlight-item"><i class="fas fa-shield-alt"></i><span>Security Best Practices</span></div>
+            <div class="highlight-item"><i class="fas fa-bolt"></i><span>Agile & Fast Delivery</span></div>
+          </div>
+          <div class="tech-stack">
+            <div class="tech-badge">React</div>
+            <div class="tech-badge">Next.js</div>
+            <div class="tech-badge">Node.js</div>
+            <div class="tech-badge">TypeScript</div>
+            <div class="tech-badge">PostgreSQL</div>
+            <div class="tech-badge">MongoDB</div>
+            <div class="tech-badge">Docker</div>
+            <div class="tech-badge">AWS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">My Arsenal</div>
+        <h2 class="section-title">Skills & Expertise</h2>
+        <p class="section-subtitle">Technologies I work with every day</p>
+      </div>
+      <div class="skills-tabs">
+        <button class="skill-tab active" data-tab="frontend">Frontend</button>
+        <button class="skill-tab" data-tab="backend">Backend</button>
+        <button class="skill-tab" data-tab="devops">DevOps</button>
+      </div>
+      <div class="skills-content" id="skillsContent"></div>
+      <div class="skills-extras">
+        <div class="extra-card"><i class="fas fa-palette"></i><h4>UI/UX Design</h4><p>Figma, Adobe XD</p></div>
+        <div class="extra-card"><i class="fas fa-terminal"></i><h4>CLI & Tools</h4><p>Linux, Bash, Vim</p></div>
+        <div class="extra-card"><i class="fas fa-brain"></i><h4>Architecture</h4><p>Microservices, MVC, CQRS</p></div>
+        <div class="extra-card"><i class="fas fa-lock"></i><h4>Security</h4><p>JWT, OAuth, HTTPS</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">My Work</div>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A showcase of my best work</p>
+      </div>
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="featured">Featured</button>
+        <button class="filter-btn" data-filter="react">React</button>
+        <button class="filter-btn" data-filter="node">Node.js</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Let's Talk</div>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have a project in mind? Let's build it together.</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <a class="contact-card" href="mailto:hassaantahir991@gmail.com" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <h3>Email Me</h3>
+            <p id="contactEmail">hassaantahir991@gmail.com</p>
+          </a>
+          <a class="contact-card" href="https://github.com/Hassaantahir72" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <h3>GitHub</h3>
+            <p id="contactGithub">github.com/Hassaantahir72</p>
+          </a>
+          <a class="contact-card" href="https://linkedin.com/in/muh-hassaan-tahir" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <h3>LinkedIn</h3>
+            <p id="contactLinkedin">linkedin.com/in/muh-hassaan-tahir</p>
+          </a>
+          <div class="social-links" id="socialLinks"></div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="fname" placeholder="Your Name" required />
+            <label for="fname">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="femail" placeholder="Your Email" required />
+            <label for="femail">Your Email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="fsubject" placeholder="Subject" />
+            <label for="fsubject">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="fmessage" placeholder="Your Message" rows="5" required></textarea>
+            <label for="fmessage">Your Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="sendBtn">
+            <span>Send Message</span><i class="fas fa-paper-plane"></i>
+          </button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">&lt;<span>H</span>/&gt;</div>
+        <p class="footer-text">Designed & Built with ❤️ by <strong>Hassaan</strong></p>
+        <p class="footer-copy">© 2024 Hassaan. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
