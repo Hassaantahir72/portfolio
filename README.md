@@ -14,16 +14,6 @@ A stunning full-stack developer portfolio with an admin panel.
 - 🌐 **Responsive Design** — Works perfectly on all devices
 - 🖱️ **Custom Cursor** — Interactive cursor with follower effect
 
-### Admin Panel (`/admin`)
-- 🔐 **Secure Login** — JWT authentication (you only can access)
-- 📊 **Dashboard** — Overview stats and recent messages
-- ➕ **Add/Edit/Remove Projects** — Full CRUD
-- 🌟 **Add/Remove Skills** — Frontend, Backend, DevOps categories
-- ✏️ **Edit Page Content** — Hero, About, Contact sections
-- 📁 **Upload CV** — Upload your PDF resume
-- 📥 **View Messages** — All contact form submissions
-- 🔔 **Email Notifications** — Get emailed when someone contacts you
-- ⚙️ **Settings** — Change password, update notification email
 
 ## 🛠️ Setup
 
@@ -57,16 +47,6 @@ npm run dev
 
 ### 4. Open in Browser
 - **Portfolio:** http://localhost:3000
-- **Admin Panel:** http://localhost:3000/admin
-
-## 🔐 Default Admin Credentials
-
-```
-Username: hassaan
-Password: admin123
-```
-
-> ⚠️ **IMPORTANT:** Change your password immediately from the Admin Panel → Settings!
 
 ## 📁 File Structure
 ```
