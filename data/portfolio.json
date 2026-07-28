@@ -42,12 +42,13 @@
   "projects": [
     {
       "id": 1,
-      "title": "E-Commerce Platform",
-      "description": "A full-featured e-commerce platform with real-time inventory, payment integration, and admin dashboard. Built with React, Node.js, and MongoDB.",
-      "tags": ["React", "Node.js", "MongoDB", "Stripe"],
-      "github": "https://github.com/Hassaantahir72",
-      "live": "#",
+      "title": "Finance Tracker Platform",
+      "description": "A full-stack personal finance platform with multi-user authentication, 2FA security, real-time dashboards, budget tracking, and an admin panel — built with React, Node.js, Express, and MongoDB.",
+      "tags": ["React", "Node.js", "Express", "MongoDB"],
+      "github": "https://github.com/Hassaantahir72/finance-tracker",
+      "live": "https://finance-tracker-web-lac.vercel.app",
       "image": "ecommerce",
+      "customImage": "assets/finance-tracker.png",
       "featured": true
     },
     {
